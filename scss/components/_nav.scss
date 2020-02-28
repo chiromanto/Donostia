@@ -6,29 +6,17 @@
   &__menu {
     position: absolute;
     width: 3rem;
-    background-color: $color_main-txt;
+    background-color: $color_main-bg;
     height: 0.6rem;
     border-radius: 5px;
     z-index: 999;
-
-    &--click-first {
-      animation: clickMenu 1.2s infinite alternate;
-    }
-
-    &--click-second {
-      animation: clickMenu 1.2s 0.2s infinite alternate;
-    }
-
-    &--click-third {
-      animation: clickMenu 1.2s 0.4s infinite alternate;
-    }
 
     &--first {
       top: 0;
       left: 0;
       transform-origin: top right;
       transform: rotate(0) scaleX(1) translateY(0);
-      transition: transform 0.2s 0.2s;
+      transition: all 0.2s 0.2s;
     }
 
     &--second {
@@ -38,7 +26,7 @@
       transform-origin: 50% 0%;
       opacity: 1;
       visibility: visible;
-      transition: transform 0.2s, visibility 0.2s 0.2s, opacity 0.3s 0.2s;
+      transition: transform 0.2s, visibility 0.2s 0.2s, opacity 0.3s 0.2s, background-color 0.2s 0.2s;
     }
 
     &--third {
@@ -46,21 +34,24 @@
       left: 0;
       transform-origin: bottom right;
       transform: rotate(0) scaleX(1) translateY(0);
-      transition: transform 0.2s 0.2s;
+      transition: all 0.2s 0.2s;
     }
 
     &--close-first {
       transform: rotate(-45deg) scaleX(1.4) translateY(-0.3rem);
+      background-color: $color-main-txt;
     }
 
     &--close-second {
       transform: rotate(-45deg) scaleX(1.3) translateY(-0.3rem);
       opacity: 0;
       visibility: hidden;
+      background-color: $color-main-txt;
     }
 
     &--close-third {
       transform: rotate(45deg) scaleX(1.4) translateY(0.3rem);
+      background-color: $color-main-txt;
     }
   }
 
@@ -72,7 +63,7 @@
     right: 0;
     transform: translateX(100%);
     background-color: rgba($color-main-bg, 0.95);
-    transition: 0.4s;
+    transition: 0.4s 0.1s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,10 +78,6 @@
   &__item {
     width: 100%;
     flex-basis: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
     transition: 0.2s;
 
     &:hover {
@@ -104,6 +91,16 @@
     &:hover .nav__item-text {
       color: $color-second-txt;
     }
+  }
+
+  &__link {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
   &__icon {

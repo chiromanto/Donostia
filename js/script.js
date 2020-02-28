@@ -5,7 +5,6 @@ const navIcons = document.querySelectorAll('.nav__icon');
 const headerInfoMain = document.querySelector('.header__info-main');
 const headerInfoSecond = document.querySelector('.header__info-second');
 const closingClasses = ['nav__menu--close-first', 'nav__menu--close-second', 'nav__menu--close-third'];
-const clickingClasses = ['nav__menu--click-first', 'nav__menu--click-second', 'nav__menu--click-third'];
 
 document.addEventListener('DOMContentLoaded', () => {
   headerInfoMain.classList.add('header__info-main--show');
@@ -15,10 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 nav.addEventListener('click', () => {
   menuSpans.forEach((span, i) => {
     span.classList.toggle(`${closingClasses[i]}`);
-    span.classList.toggle(`${clickingClasses[i]}`);
   });
   navIcons.forEach(icon => {
     icon.classList.toggle('nav__icon--show');
   });
   navSpace.classList.toggle('nav__space--show');
 });
+
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);

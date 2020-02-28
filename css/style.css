@@ -5,29 +5,18 @@
           box-sizing: border-box;
 }
 
-@-webkit-keyframes clickMenu {
-  100% {
-    background-color: #93878a;
-  }
-}
-
-@keyframes clickMenu {
-  100% {
-    background-color: #93878a;
-  }
-}
-
 :root {
   font-size: 10px;
 }
 
 .page {
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   max-width: 1920px;
 }
 
 .header {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: fixed;
 }
@@ -41,7 +30,7 @@
   text-align: center;
   background-color: rgba(41, 37, 38, 0.8);
   font-family: "Poppins", "sans-serif";
-  padding: 75vh 1rem 0;
+  padding: 65vh 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,25 +117,10 @@
 .nav__menu {
   position: absolute;
   width: 3rem;
-  background-color: #292526;
+  background-color: #d6d7dc;
   height: 0.6rem;
   border-radius: 5px;
   z-index: 999;
-}
-
-.nav__menu--click-first {
-  -webkit-animation: clickMenu 1.2s infinite alternate;
-          animation: clickMenu 1.2s infinite alternate;
-}
-
-.nav__menu--click-second {
-  -webkit-animation: clickMenu 1.2s 0.2s infinite alternate;
-          animation: clickMenu 1.2s 0.2s infinite alternate;
-}
-
-.nav__menu--click-third {
-  -webkit-animation: clickMenu 1.2s 0.4s infinite alternate;
-          animation: clickMenu 1.2s 0.4s infinite alternate;
 }
 
 .nav__menu--first {
@@ -156,10 +130,8 @@
           transform-origin: top right;
   -webkit-transform: rotate(0) scaleX(1) translateY(0);
           transform: rotate(0) scaleX(1) translateY(0);
-  -webkit-transition: -webkit-transform 0.2s 0.2s;
-  transition: -webkit-transform 0.2s 0.2s;
-  transition: transform 0.2s 0.2s;
-  transition: transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+  -webkit-transition: all 0.2s 0.2s;
+  transition: all 0.2s 0.2s;
 }
 
 .nav__menu--second {
@@ -171,10 +143,10 @@
           transform-origin: 50% 0%;
   opacity: 1;
   visibility: visible;
-  -webkit-transition: visibility 0.2s 0.2s, opacity 0.3s 0.2s, -webkit-transform 0.2s;
-  transition: visibility 0.2s 0.2s, opacity 0.3s 0.2s, -webkit-transform 0.2s;
-  transition: transform 0.2s, visibility 0.2s 0.2s, opacity 0.3s 0.2s;
-  transition: transform 0.2s, visibility 0.2s 0.2s, opacity 0.3s 0.2s, -webkit-transform 0.2s;
+  -webkit-transition: visibility 0.2s 0.2s, opacity 0.3s 0.2s, background-color 0.2s 0.2s, -webkit-transform 0.2s;
+  transition: visibility 0.2s 0.2s, opacity 0.3s 0.2s, background-color 0.2s 0.2s, -webkit-transform 0.2s;
+  transition: transform 0.2s, visibility 0.2s 0.2s, opacity 0.3s 0.2s, background-color 0.2s 0.2s;
+  transition: transform 0.2s, visibility 0.2s 0.2s, opacity 0.3s 0.2s, background-color 0.2s 0.2s, -webkit-transform 0.2s;
 }
 
 .nav__menu--third {
@@ -184,15 +156,14 @@
           transform-origin: bottom right;
   -webkit-transform: rotate(0) scaleX(1) translateY(0);
           transform: rotate(0) scaleX(1) translateY(0);
-  -webkit-transition: -webkit-transform 0.2s 0.2s;
-  transition: -webkit-transform 0.2s 0.2s;
-  transition: transform 0.2s 0.2s;
-  transition: transform 0.2s 0.2s, -webkit-transform 0.2s 0.2s;
+  -webkit-transition: all 0.2s 0.2s;
+  transition: all 0.2s 0.2s;
 }
 
 .nav__menu--close-first {
   -webkit-transform: rotate(-45deg) scaleX(1.4) translateY(-0.3rem);
           transform: rotate(-45deg) scaleX(1.4) translateY(-0.3rem);
+  background-color: #292526;
 }
 
 .nav__menu--close-second {
@@ -200,11 +171,13 @@
           transform: rotate(-45deg) scaleX(1.3) translateY(-0.3rem);
   opacity: 0;
   visibility: hidden;
+  background-color: #292526;
 }
 
 .nav__menu--close-third {
   -webkit-transform: rotate(45deg) scaleX(1.4) translateY(0.3rem);
           transform: rotate(45deg) scaleX(1.4) translateY(0.3rem);
+  background-color: #292526;
 }
 
 .nav__space {
@@ -216,8 +189,8 @@
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   background-color: rgba(214, 215, 220, 0.95);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.4s 0.1s;
+  transition: 0.4s 0.1s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,19 +216,6 @@
   width: 100%;
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
@@ -270,6 +230,25 @@
 
 .nav__item:hover .nav__item-text {
   color: #fff;
+}
+
+.nav__link {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav__icon {
@@ -312,19 +291,19 @@
 .footer__info {
   color: #fff;
   font-weight: normal;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 3rem;
   font-family: "Poppins", "sans-serif";
 }
 
 .page--sub-page {
-  background-image: url("../ravenna/ravenna1.png");
+  background-image: url("../ravenna/ravenna.png");
 }
 
 .header__info--sub-base {
   padding-top: 1.5rem;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%, 0 95%, 100% 95%, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%, 0 95%, 100% 95%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%);
+          clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%);
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -332,12 +311,17 @@
       -ms-flex-align: start;
           align-items: flex-start;
   text-align: left;
+  height: 600px;
 }
 
 .header__info-main--sub-base {
   padding-bottom: 0;
   padding-left: 1rem;
   width: 250px;
+}
+
+.footer--sub-footer {
+  background-color: rgba(41, 37, 38, 0.8);
 }
 
 .content {
@@ -369,5 +353,9 @@
 
 .content__small-part {
   padding-bottom: 1rem;
+}
+
+.header__info--sub-history {
+  padding-top: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */

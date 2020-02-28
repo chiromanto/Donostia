@@ -1,5 +1,5 @@
 .header {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: fixed;
 
@@ -12,7 +12,7 @@
     text-align: center;
     background-color: rgba($color-main-txt, 0.8);
     font-family: $font-main;
-    padding: 75vh 1rem 0;
+    padding: 65vh 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
