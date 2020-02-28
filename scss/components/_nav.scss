@@ -91,9 +91,18 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: rgba($color-main-txt, 0.8);
+    }
+
     &:hover .nav__icon {
-      transform: scale(1.5);
-      fill: $color-main-txt;
+      fill: $color-second-txt;
+    }
+
+    &:hover .nav__item-text {
+      color: $color-second-txt;
     }
   }
 
@@ -102,7 +111,7 @@
     height: 3rem;
     transform: scale(0);
     flex-basis: 3rem;
-    transition: all 0.4s 0.2s;
+    transition: transform 0.4s 0.3s, fill 0.2s;
 
     &--show {
       transform: scale(1);
@@ -114,5 +123,6 @@
     font-size: 1.8rem;
     font-family: $font-main;
     color: $color-main-txt;
+    transition: 0.2s;
   }
 }

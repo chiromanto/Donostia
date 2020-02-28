@@ -1,0 +1,17 @@
+.page--sub-page {
+  background-image: url('../ravenna/ravenna1.png');
+}
+
+.header__info--sub-base {
+  padding-top: 1.5rem;
+  clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%, 0 95%, 100% 95%, 100% 100%, 0 100%);
+  justify-content: start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.header__info-main--sub-base {
+  padding-bottom: 0;
+  padding-left: 1rem;
+  width: 250px;
+}

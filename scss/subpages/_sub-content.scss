@@ -1,0 +1,30 @@
+.content {
+  width: 100%;
+  padding: 20vh 2rem 5vh;
+
+  &__section {
+    padding-bottom: 4rem;
+  }
+
+  &__header {
+    font-size: 2.2rem;
+    font-family: $font-main;
+    color: $color-main-txt;
+    padding-bottom: 0.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: solid 3px $color-main-txt;
+  }
+
+  &__info {
+    font-size: 1.5rem;
+    font-family: $font-main;
+    text-indent: 4rem;
+    text-align: justify;
+    color: $color-main-txt;
+    overflow: hidden;
+  }
+
+  &__small-part {
+    padding-bottom: 1rem;
+  }
+}

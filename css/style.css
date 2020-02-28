@@ -27,15 +27,16 @@
 }
 
 .header {
-  height: 100%;
-  position: relative;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
 }
 
 .header__info {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
-  bottom: 0;
+  top: 0;
   left: 0;
   text-align: center;
   background-color: rgba(41, 37, 38, 0.8);
@@ -51,7 +52,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: white;
+  color: #fff;
   line-height: 1.4;
   -webkit-clip-path: polygon(0 75%, 50% 75%, 100% 60%, 100% 20%, 50% 0, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 75%, 50% 75%, 100% 60%, 100% 20%, 50% 0, 100% 0, 100% 100%, 0 100%);
@@ -255,12 +256,20 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.nav__item:hover {
+  background-color: rgba(41, 37, 38, 0.8);
 }
 
 .nav__item:hover .nav__icon {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
-  fill: #292526;
+  fill: #fff;
+}
+
+.nav__item:hover .nav__item-text {
+  color: #fff;
 }
 
 .nav__icon {
@@ -270,8 +279,10 @@
           transform: scale(0);
   -ms-flex-preferred-size: 3rem;
       flex-basis: 3rem;
-  -webkit-transition: all 0.4s 0.2s;
-  transition: all 0.4s 0.2s;
+  -webkit-transition: fill 0.2s, -webkit-transform 0.4s 0.3s;
+  transition: fill 0.2s, -webkit-transform 0.4s 0.3s;
+  transition: transform 0.4s 0.3s, fill 0.2s;
+  transition: transform 0.4s 0.3s, fill 0.2s, -webkit-transform 0.4s 0.3s;
 }
 
 .nav__icon--show {
@@ -285,5 +296,78 @@
   font-size: 1.8rem;
   font-family: "Poppins", "sans-serif";
   color: #292526;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
+
+.footer__info {
+  color: #fff;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 3rem;
+  font-family: "Poppins", "sans-serif";
+}
+
+.page--sub-page {
+  background-image: url("../ravenna/ravenna1.png");
+}
+
+.header__info--sub-base {
+  padding-top: 1.5rem;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%, 0 95%, 100% 95%, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%, 0 95%, 100% 95%, 100% 100%, 0 100%);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  text-align: left;
+}
+
+.header__info-main--sub-base {
+  padding-bottom: 0;
+  padding-left: 1rem;
+  width: 250px;
+}
+
+.content {
+  width: 100%;
+  padding: 20vh 2rem 5vh;
+}
+
+.content__section {
+  padding-bottom: 4rem;
+}
+
+.content__header {
+  font-size: 2.2rem;
+  font-family: "Poppins", "sans-serif";
+  color: #292526;
+  padding-bottom: 0.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: solid 3px #292526;
+}
+
+.content__info {
+  font-size: 1.5rem;
+  font-family: "Poppins", "sans-serif";
+  text-indent: 4rem;
+  text-align: justify;
+  color: #292526;
+  overflow: hidden;
+}
+
+.content__small-part {
+  padding-bottom: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

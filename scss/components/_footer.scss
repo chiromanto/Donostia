@@ -1,0 +1,15 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+  &__info {
+    color: $color-second-txt;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    font-family: $font-main;
+  }
+}
