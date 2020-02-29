@@ -1,22 +1,23 @@
-.page--sub-page {
+.page--sub {
   background-image: url('../ravenna/ravenna.png');
 }
 
-.header__info--sub-base {
-  padding-top: 1.5rem;
+.header__info--sub {
   clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%);
-  justify-content: start;
-  align-items: flex-start;
-  text-align: left;
   height: 600px;
 }
 
-.header__info-main--sub-base {
-  padding-bottom: 0;
-  padding-left: 1rem;
-  width: 250px;
+.header__info-group--sub {
+  height: 95px;
+  padding: 0 0 0 1rem;
+  bottom: auto;
+  top: 0;
+  width: 70%;
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
 
-.footer--sub-footer {
+.footer--sub {
   background-color: rgba($color-main-txt, 0.8);
 }

@@ -58,7 +58,7 @@
   &__space {
     position: fixed;
     width: 80%;
-    height: 80%;
+    height: 85%;
     top: 0;
     right: 0;
     transform: translateX(100%);
@@ -66,9 +66,8 @@
     transition: 0.4s 0.1s;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 12vh 0 12vh;
+    justify-content: space-between;
+    padding: 10vh 0;
 
     &--show {
       transform: translateX(0);
@@ -77,7 +76,7 @@
 
   &__item {
     width: 100%;
-    flex-basis: 20%;
+    flex: 1 0 0;
     transition: 0.2s;
 
     &:hover {
