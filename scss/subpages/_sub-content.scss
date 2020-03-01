@@ -27,4 +27,28 @@
   &__small-part {
     padding-bottom: 1rem;
   }
+
+  &__list-item {
+    padding-bottom: 0.5rem;
+    list-style-position: outside;
+    list-style-type: circle;
+  }
+
+  &__figure {
+    width: 100%;
+    padding-top: 2rem;
+  }
+
+  &__figure-info {
+    font-size: 1rem;
+    font-style: italic;
+    font-family: $font-main;
+    color: $color-main-txt;
+    padding-top: 0.6rem;
+  }
+
+  &__char {
+    object-fit: contain;
+    width: 100%;
+  }
 }

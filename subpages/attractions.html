@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donostia - San Sebastian/info</title>
+    <title>Donostia - San Sebastian/attractions</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet" />
     <link rel="stylesheet" href="../css/style.css" />
   </head>
@@ -47,7 +47,7 @@
               <span class="nav__item-text">Historia miasta</span>
             </a>
           </div>
-          <div class="nav__item" id="#nav__atractions">
+          <div class="nav__item nav__item--current" id="#nav__atractions">
             <a href="attractions.html" class="nav__link">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="nav__icon">
                 <path
@@ -58,94 +58,144 @@
             </a>
           </div>
           <div class="nav__item" id="#nav__hospitality">
-            <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" width="24" height="24" clip-rule="evenodd" class="nav__icon" viewBox="0 0 24 24">
-              <path
-                d="M11.415 12.393l1.868-2.289c.425-.544.224-.988-.055-2.165-.205-.871-.044-1.854.572-2.5 1.761-1.844 5.343-5.439 5.343-5.439l.472.37-3.693 4.728.79.617 3.87-4.59.479.373-3.558 4.835.79.618 3.885-4.58.443.347-3.538 4.85.791.617 3.693-4.728.433.338s-2.55 4.36-3.898 6.535c-.479.771-1.425 1.161-2.334 1.167-1.211.007-1.685-.089-2.117.464l-2.281 2.795c2.445 2.962 4.559 5.531 5.573 6.829.771.987.065 2.421-1.198 2.421-.42 0-.853-.171-1.167-.573l-8.36-10.072s-.926.719-1.944 1.518c-3.172-5.184-6.267-11.661-6.267-13.955 0-.128-.034-.924.732-.924.245 0 .493.116.674.344.509.642 5.415 6.513 10.002 12.049m-2.952 3.617l1.953 2.365-4.115 5.055c-.295.378-.736.576-1.182.576-1.198 0-1.991-1.402-1.189-2.428l4.533-5.568z"
-              />
-            </svg>
-            <span class="nav__item-text">Baza turystyczna</span>
+            <a href="hospitality.html" class="nav__link">
+              <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" width="24" height="24" clip-rule="evenodd" class="nav__icon" viewBox="0 0 24 24">
+                <path
+                  d="M11.415 12.393l1.868-2.289c.425-.544.224-.988-.055-2.165-.205-.871-.044-1.854.572-2.5 1.761-1.844 5.343-5.439 5.343-5.439l.472.37-3.693 4.728.79.617 3.87-4.59.479.373-3.558 4.835.79.618 3.885-4.58.443.347-3.538 4.85.791.617 3.693-4.728.433.338s-2.55 4.36-3.898 6.535c-.479.771-1.425 1.161-2.334 1.167-1.211.007-1.685-.089-2.117.464l-2.281 2.795c2.445 2.962 4.559 5.531 5.573 6.829.771.987.065 2.421-1.198 2.421-.42 0-.853-.171-1.167-.573l-8.36-10.072s-.926.719-1.944 1.518c-3.172-5.184-6.267-11.661-6.267-13.955 0-.128-.034-.924.732-.924.245 0 .493.116.674.344.509.642 5.415 6.513 10.002 12.049m-2.952 3.617l1.953 2.365-4.115 5.055c-.295.378-.736.576-1.182.576-1.198 0-1.991-1.402-1.189-2.428l4.533-5.568z"
+                />
+              </svg>
+              <span class="nav__item-text">Baza turystyczna</span>
+            </a>
           </div>
           <div class="nav__item" id="#nav__gallery">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="nav__icon">
-              <path d="M5 8.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5zm9 .5l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm8-4v14h-20v-14h20zm2-2h-24v18h24v-18z" />
-            </svg>
-            <span class="nav__item-text">Galeria</span>
+            <a href="gallery.html" class="nav__link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="nav__icon">
+                <path d="M5 8.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5zm9 .5l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm8-4v14h-20v-14h20zm2-2h-24v18h24v-18z" />
+              </svg>
+              <span class="nav__item-text">Galeria</span>
+            </a>
           </div>
         </div>
       </nav>
     </header>
     <main class="content">
       <section class="content__section">
-        <h2 class="content__header">Średniowiecze</h2>
+        <h2 class="content__header">Niezwykłe położenie</h2>
         <div class="content__info">
           <p class="content__small-part">
-            Początkowo, w czasach średniowiecza San Sebastian było niewielką osadą rybacką, zlokalizowaną na cyplu, w rogu zatoki La Concha, chronioną od północy przed wiatrami przez wzgórze Monte Urgull. Dziś w tym miejscu znajduję się stare miasto Donostii. Pierwsze źródła na temat istnienia osady
-            na tym terenie pochodzą z XI wieku, w tamtym czasie nosiła ona nazwę Izurum.
+            Największym atutem San Sebastian jest jego niezwykłe położenie geograficzne, w miejscu gdzie spotykają się najbardziej atrakcyjne z punktu widzenia człowieka wytwory natury, takie jak: góry, lasy, ocean, plaże, wyspy czy rzeki.
           </p>
           <p class="content__small-part">
-            W 1180 roku osada otrzymała prawa miejskie oraz oficjalną nazwę – San Sebastian, na mocy przywilejów przyznanych przez króla Sancho El Sabio . Stało się tak ponieważ król Nawarry chciał uzyskać dostęp do portu położonego nad wybrzeżem kantabryjskim, aby rozpocząć eksport towarów droga
-            morską.Obok języka baskijskiego i hiszpańskiego powszechnie używano także język gaskoński m.in. z powodu silnych relacji handlowych z miastem Bajonna. Do dzisiejszych czasów zachowały się ślady tego języka w nazewnictwie, takie jak Urgull czy Aiete.
+            Historycznie miasto zostało ulokowane na skraju zatoki La Concha przypominającej swoim kształtem muszlę. Od wschodu zatoka zamknięta jest przez wysokie wzgórze – Monte Urgull, górujące nad Parte Vieja, od zachodu natomiast przez Monte Igeldo. Pomiędzy wzgórzami, w miejscu gdzie zatoka
+            przechodzi w ocean ukształtowała się niewielka, lecz bardzo urokliwa wyspa - Santa Clara z latarnią morską na szczycie. Można się na nią dostać o własnych siłach, wykorzystując na odpoczynek platformę zlokalizowaną w połowie dystansu do wyspy. Najkrótsza droga na Santa Clarę wiedzie
+            jednak od strony Monte Igeldo, gdzie podczas odpływu wyłaniają się skały i staje się możliwe przejście po dnie niemal do samej wyspy.
           </p>
-          <p class="content__small-part">
-            Życie mieszkańców Donostii od zawsze było związane z morzem. Polowali oni na wieloryby i dorsze, zapuszczając się ze swoim statkami aż do wybrzeży Grenlandii i Nowej Funlandii. Rozwijała się również żegluga handlowa. Sprowadzane z Nawarry wino i oliwa były transportowane na statkach do
-            Francji, Flandrii i Anglii, w wyniku czego powstawały stocznie i huty wzdłuż rzeki Urumea.
-          </p>
-          <p class="content__small-part">
-            W 1200 roku Nawarra straciła prowincję Gipuzkoa na rzecz królestwa Kastylii. San Sebastian znalazło się pod panowaniem nowego władcy, który jednak szybko potwierdził wszystkie jego prawa . Ponadto powstały nowe szlaki handlowe łączące Donostię z miastami kastylijskimi, którymi
-            eksportowano głównie wełnę, utrzymując jednocześnie dotychczasowe kontakty handlowe z Nawarrą.
-          </p>
-          <p class="content__small-part">San Sebastian zawarło przymierze z innymi portami na wybrzeżu kantabryjskim od Santander po Hondarribię, aby skutecznie chronić swoje przywileje nadane przez króla, a także utrzymywać korzystne kontakty handlowe z innymi portami i królestwami w Europie.</p>
-          <p class="content__small-part">W związku z położeniem blisko francuskiej granicy San Sebastian było przez wieki ufortyfikowanym miastem i strategicznym punktem w czasie wojen.Na wzgórzu Monte Urgull wybudowano twierdzę wyposażoną w ciężką artylerię, w celu obrony terytorium.</p>
         </div>
       </section>
       <section class="content__section">
-        <h2 class="content__header">XVIII i XIX wiek</h2>
+        <h2 class="content__header">Plaże</h2>
         <div class="content__info">
           <p class="content__small-part">
-            Miasto było wielokrotnie atakowane o czym świadczą choćby liczne ofiary oblężeń z XVII i XVIII wieku. Dzięki waleczności swoich mieszkańców, San Sebastian skapitulowało po raz pierwszy dopiero w 1719 roku wpadając na dwa lata w ręce Francuzów . W San Sebastian wielokrotnie wybuchały
-            także pożary, które częściowo niszczyły miasto, łącznie aż 12 razy.
+            W zatoce znajdują się dwie plaże, większa i bardziej znana – La Concha oraz mniejsza La Ondarreta, oddzielone od siebie potężną skałą na której znajduje się pałac Miramar. W mieście jest jeszcze trzecia plaża - La Zurriola, która powstała w innej części San Sebastian. Złociste plaże w
+            zatoce La Concha przyciągają osoby w każdym wieku. Są tutaj doskonałe warunki do pływania z uwagi na niewielkie fale. Wzdłuż całej zatoki powstała promenada o długości około 3 km, często uczęszczana przez turystów.
           </p>
           <p class="content__small-part">
-            W 1728 roku nastały dobre czasy dla miasta, ponieważ została utworzona królewska kompania handlowa - Gipuzcoana de Caracas, licząca ok. 50 okrętów, która za zgodą króla Filipa V zmonopolizowała kontakty handlowe z Wenezuelą . Importowano przede wszystkim kakao i tytoń, a także kawę,
-            cukier, skóry i bawełnę. Z kolei eksportowano głównie produkty wytworzone w lokalnych fabrykach. Ponadto Gipuzkoa posiadała 12 okrętów wojennych, których głównym zadaniem było eskortowanie floty handlowej, ale także szturmowanie, rabowanie, palenie i zatapianie okrętów angielskich i
-            holenderskich. Dzięki zyskom z handlu i łupom z piractwa miasto bardzo dobrze funkcjonowało i ciągle się rozwijało. Z tego okresu pochodzi między innymi barokowa bazylika Santa Maria del Coro zachowana do dziś w niezmienionym stanie. Niestety wojny morskie z Anglią zakończyły „złote
-            czasy”, osłabiając flotę handlową, co doprowadziło do załamania gospodarczego. Najgorsze jednak dopiero miało nadejść.
+            Na końcu promenady, u podnóży Monte Igeldo można podziwiać jeden z symboli miasta – „Peine del Viento” czyli „Grzebień Wiatrów” Jest to zbiór trzech rzeźb ze stali przymocowanych do skał, autorstwa Eduarda Chillidy. Ogółem w San Sebastian istnieje 56 różnego rodzaju rzeźb i pomników,
+            głównie projektów Chillidy.
           </p>
-          <p class="content__small-part">
-            W 1808 roku San Sebastian zostało zajęte przez siły Napoleona, które pozostawały w nim aż do roku 1813 , w którym to sprzymierzone wojska hiszpańsko-angielsko-portugalskie zaatakowały miasto. Stacjonował w nim 3 tysięczny garnizon francuski. Generał Wellington rozkazał ostrzelać miasto
-            od strony rzeki Urumea. Po zniszczeniu części murów i wycofaniu się francuzów do twierdzy na Monte Urgull, wrogie oddziały wkroczyły do miasta i po serii gwałtownych ataków przeprowadzonych przeciwko miejscowej ludności, spaliły je niemal doszczętnie. Przetrwały jedynie budynki położone
-            najbardziej na północ tj. około 30 domów oraz kościoły Santa Maria i San Vincente. Mieszkańcy San Sebastian jednak nie poddali się i postanowili odbudować miasto. W ten sposób powstało „nowe” stare miasto, w którego centrum znalazła się Plaza de la Constitución.
-          </p>
-          <p class="content__small-part">
-            W 1845 roku królowa Izabela II przybyła do miasta w celu wyleczenia dolegliwości skóry, za pomocą kąpieli morskich, które zalecili jej lekarze. Obecność królowej przez lata, przyciągała do miasta arystokracje hiszpańską. Ta sytuacja doprowadziła do szybkich inwestycji i w rezultacie do
-            nowej fali rozwoju miasta. San Sebastian było pierwszym miastem w Hiszpanii, w którym pojawiły się tramwaje, sygnalizacja świetlna czy telefony . Kolejnymi znaczącymi czynnikami rozwoju Donostii było wyburzenie murów obronnych w 1863 roku . Uzyskany w ten sposób materiał został
-            wykorzystany m.in. do osuszenia brzegów rzeki Urumea. Od tego momentu miasto zaczęło rozprzestrzeniać się na okoliczne tereny dając początek dzisiejszemu centrum San Sebastian, z potężną katedrą Buen Pastor. Nowe dzielnice miasta rozrastały się także w związku z ciągle zwiększającą się
-            populacją miasta. Liczba mieszkańców wzrosła z 20 823 osób w 1880 roku do 65 930 w roku 1925.
-          </p>
-          <p class="content__small-part">
-            W 1893 roku królowa Maria Cristina wybudowała tutaj Pałac Miramar, który stał się jej letnią rezydencją, przyciągającą arystokrację i burżuazję hiszpańską . W mieście przybywało coraz więcej nowoczesnych i eleganckich budynków z wpływami architektury francuskiej. Budowano nowe aleje,
-            place pełne zieleni oraz bulwary. W tym czasie powstały m.in. promenada la Concha, Paseo Nuevo - otaczające Monte Urgull, Gran Casino (dzisiejsze Ayuntamiento), „Funicular” – kolejka na szczyt Monte Igeldo, Hotel Maria Cristina czy Teatr Victoria Eugenia . San Sebastian stało się
-            pierwszej klasy nadmorskim kurortem, chętnie odwiedzanym i podziwiamy przez turystów na równi z Niceą, Monte Carlo czy Vichy. Ten wspaniały dla miasta okres nazywany „BelleÉpoque” , zakończyły rosnące niepokoje społeczne i polityczne początku XX wieku.
-          </p>
-          <p class="content__small-part"></p>
         </div>
       </section>
       <section class="content__section">
-        <h2 class="content__header">XX wiek</h2>
+        <h2 class="content__header">Monte Igeldo & <br />Monte Urgull</h2>
         <div class="content__info">
           <p class="content__small-part">
-            Wojna domowa rozpoczęta w 1936 roku otwiera ponury rozdział nie tylko w historii San Sebastian, ale całego Kraju Basków. Nastały czasy dyktatury Generała Franco, którego celem było zlikwidowanie wszelkiej odrębności etnicznej, kulturowej i politycznej w Hiszpanii. Prowincja Gipuzkoa
-            została uznana za zdradziecką i pozbawiona resztek autonomii. Franco chciał całkowicie wynarodowić Basków. Obowiązywał całkowity zakaz używania „euskary” czyli języka baskijskiego. Z uwagi na to zaczęli oni organizować opór. W 1959 r. powstał ruch separatystyczny pod nazwą Kraj Basków i
-            Wolność,w skrócie ETA, który szybko zaczął stosować walkę zbrojną jako formę protestu. Wraz z nadejściem demokracji, po śmierci generała Franco radykalnie zmieniła się polityka państwa, a wiele żądań ETA zostało spełnionych.
+            Na szczyt Monte Igeldo można się dostać za pomocą długiej na 300 metrów kolejki szynowo-linowej o nazwie„Funicular”, wybudowanej w 1912 roku, która sama w sobie jest już atrakcja . Znajduję się tutaj m.in. wysoka wieża, z której rozciąga się piękny widok na panoramę miasta.
           </p>
           <p class="content__small-part">
-            W drugiej połowie XX wieku San Sebastian wzmocniło swój ekonomiczny, kulturowy i turystyczny potencjał wspierając nowe projekty rozwoju. W tym samy czasie zadbano o naturalne i kulturowe dziedzictwo, dzięki czemu miasto zyskało swój obecny charakter połączenia tradycji z nowoczesnością.
-            W tym czasie tworzył swoje dzieła jeden z najbardziej znanych mieszkańców San Sebastian – Eduardo Chillida, którego abstrakcyjne rzeźby zdobią obecnie miasto, z „Peine del Viento” na czele. Odradzała się kultura baskijska tłumiona za czasów Franco. Zaczęto organizować festiwale – filmowy
-            i jazzowy, a także powstały pierwsze wydziały uniwersyteckie. Na przełomie XX i XXI wieku został poczyniony szereg inwestycji, będących ostatnim etapem kształtowania obecnego wyglądu miasta, m.in. budowa centrum kongresowego Kursaal, powiększenie plaży Zurriola czy renowacja Boulevard i
-            Aquarium.
+            Jednak jeszcze więcej atrakcji kryje się po drugiej stronie zatoki. Wysoko nad miastem, na wspomnianym wcześniej Monte Urgull, znajduje się dobrze zachowana, zabytkowa twierdza Santa Cruz de la Mota, z licznymi armatami i fragmentami fortyfikacji. Mieszą się tu m.in. trzy kaplice, w tym
+            poświęconą Cristo de la Mota, w której powstało niewielkie muzeum. Można tam zobaczyć np. historyczną makietę miasta.Nad kaplicą wznosi sięogromna figura Chrystusa – „SagradoCorazón”, zwrócona twarzą w stronę miasta, wysoka na 12,5 m .Jest ona widoczna z dużej odległości dzięki swoim
+            gabarytom i dobrej lokalizacji.
+          </p>
+          <p class="content__small-part">
+            Dookoła Monte Urgull wiedzie deptak - Paseo Nuevo, z pięknymi widokami na ocean. Na początku deptaka, od strony zatoki La Concha, można zatrzymać się przy niezwykłej rzeźbie ze stali o nazwie – „ConstructiónVacía” autorstwa Jorge de Oteiza.
           </p>
         </div>
       </section>
+      <section class="content__section">
+        <h2 class="content__header">Stare miasto</h2>
+        <div class="content__info">
+          <p class="content__small-part">
+            U stóp Monte Urgull znajduje się Parte Vieja czyli stare miasto, pełne wąskich uliczek, majestatycznych zabytków oraz tradycyjnych barów i restauracji serwujących lokalne przysmaki, takie jak cydr oraz tutejszą odmianę tapas o nazwie pintxos. Parte Vieja tętni życiem niemal o każdej
+            porze dnia i nocy, to prawdziwe serce Donostii. Największym zabytkiem, znajdującym się w tej części miasta jest potężna, pochodząca z XVIII wieku bazylika Santa Maria del Coro z piękną barokową fasadą, na której została przedstawiona m.in. postać św. Sebastiana - patrona miasta.
+          </p>
+          <p class="content__small-part">
+            Przed bazyliką znajdują się schody, oblegane szczególnie wieczorami. Roztacza się z nich piękny widok z katedrą Buen Pastor w tle. Na starym mieście warto zobaczyć także XVI wieczny kościół San Vicente. Jest to najstarsza w mieście, gotycka budowla z renesansowym ołtarzem.
+          </p>
+          <p class="content__small-part">
+            Jednak najciekawszym miejscem Parte Vieja jest neorenesansowy budynek muzeum św. Telma, w całości poświęcony baskijskiej kulturze i sztuce. Tu znajdują się zbiory archeologiczne i etnograficzne dotyczące Basków, największa w Kraju Basków kolekcja kamieni nagrobnych, ciekawa kolekcja
+            broni, pinakoteka obejmująca zbiory od czasów gotyku po wiek XX, oraz dzieła współczesnej sztuki baskijskiej. W centrum starego miasta można odpocząć na Plaza de la Constitución, pełnej barów z ogródkami i parasolkami, z których często korzystają turyści.
+          </p>
+        </div>
+      </section>
+      <section class="content__section">
+        <h2 class="content__header">Oceanarium</h2>
+        <div class="content__info">
+          <p class="content__small-part">
+            Tuż obok Parte Vieja znajduje się port z licznymi żaglówkami. Stąd też wypływa wycieczkowy katamaran, zabierający turystów na 40-minutowe rejsy.
+          </p>
+          <p class="content__small-part">
+            Powyżej portu wznosi się budynek Aquarium. Jest to 3 kondygnacyjne oceanarium połączone z muzeum morskim, w całości poświęconym związkom Basków z morzem. Znajduje się tu m.in. kilkadziesiąt makiet statków. Ponadto muzeum obrazuje etapy budowania łodzi, ewolucję portów, rozwój handlu,
+            prezentuje także instrumenty służące do nawigacji. Poniżej znajduje się oceanarium w którym nie tylko można podziwiać olbrzymi szkielet wieloryba złowionego w ubiegłym stuleciu, ale także spacerując w podwodnym, przeszklonym tunelu o polu widzenia – 360 stopni, oglądać morskie zwierzęta
+            w ich naturalnym środowisku.Aquarium zamieszkuje ponad 5 tysięcy morskich stworzeń, niektóre z nich można nawet dotknąć.
+          </p>
+        </div>
+      </section>
+      <section class="content__section">
+        <h2 class="content__header">Dzielnica Romantyczna</h2>
+        <div class="content__info">
+          <p class="content__small-part">
+            W centrum „dzielnicy romantycznej”, nazywanej tak ze względu na dominację eleganckich budowli z widocznymi wpływami francuskimi, powstała pod koniec XIX wieku, potężna neogotycka katedra Buen Pastor z wysoką na 75 metrów wieżą oraz z „Krzyżem Pokoju” autorstwa EudardaChillidy na środku
+            fasady . Jest to najwyższy budynek w mieście. Obok katedry znajduje się KoldoMitxelenaKulturunea z bogatą biblioteką oraz wystawami czasowymi. Ważnymi atrakcjami tej części miasta są także hotel Maria Cristina oraz teatry: Victoria Eugnia oraz BellasArtes. Centrum San Sebastian jest
+            ograniczone z jednej strony przez Zatokę La Concha a z drugiej przez rzekę Urumea, na której powstało kilka mostów takich jak: Zurriola, Santa Catalina czy Maria Cristina . Każdy z nich wygląda nieco inaczej, jednak wszystkie wpisują się w ogólny styl architektoniczny miasta.Wzdłuż rzeki
+            biegnie Paseo del Arbol de Guernica, popularne jako doskonałe miejsce dla spacerów, joggingu czy jazdy na rowerze.
+          </p>
+        </div>
+      </section>
+      <section class="content__section">
+        <h2 class="content__header">Gros</h2>
+        <div class="content__info">
+          <p class="content__small-part">
+            Po drugiej stronie rzeki Urumea znajduje się bardzo ważna dzielnica miasta, czyli Gros. Jest ona oddzielona od oceanu sztucznie powiększoną plażą o nazwie La Zurriola. To trzecia plaża w mieście, będąca ulubionym miejscem surferów, ze względu na doskonale warunki do uprawiania tego
+            sportu jakie tu panują. Na skraju plaży w miejscu gdzie rzeka Urumea wpada do Oceanu powstały bryły nowoczesnego centrum kongresowego – Kursaal, będącego symbolem nowej architektury i kierunku rozwoju kulturowego miasta. Co roku, we wrześniu odbywa się tutaj słynny festiwal filmowy.
+          </p>
+          <p class="content__small-part">
+            Sama dzielnica znana jest przede wszystkim z „PintxoPote” czyli organizowanej w każdy czwartek imprezy, podczas której tłumy ludzi wychodzą na ulice w celach towarzyskich. Główną atrakcją są promocyjne ceny, w ramach których można kupić jedno „pintxo” oraz piwo, wino lub cydr w zestawie
+            za 2 euro. Na południe od dzielnicy Gros w zakolu rzeki Urumea znajduje się piękny park Cristina Enea, pełny egzotycznych gatunków drzew takich jak cedr libański oraz malowniczych ogrodów, po których spacerują pawie.
+          </p>
+        </div>
+      </section>
+      <h2 class="content__header">Pozostałe atrakcje</h2>
+      <div class="content__info">
+        <p class="content__small-part">
+          Pomiędzy Parte Vieja a plażą La Concha znajduje się majestatyczny, zabytkowy ratusz - Ayuntamiento z 1887 roku, będący niegdyś kasynem a obecnie jednym z centrów życia kulturowego w mieście. Przed ratuszem powstały piękne ogrody o nazwie „Alderdi Eder”. 
+        </p>
+        <p class="content__small-part">
+          Parte Vieja jest oddzielone od centrum miasta nazywanego „dzielnicą „romantyczną” bulwarem – Boulevard, przystosowanym głównie dla ruchu pieszych. Powstał on w miejscu wyburzonych niegdyś murów miejskich. Jest tu dużo zieleni, ławek i lodziarni popularnych szczególni latem. Często występują tutaj także lokalni artyści, organizowane są rożnego rodzaju prezentacje i imprezy. Dwie przecznice od Boulevard znajduje się PlazaGipuzkoa, czyli zielony skwer, z oczkiem wodnym i mieszkającym tam łabędziami. 
+        </p>
+        <p class="content__small-part">
+          Bogaty kalendarz imprez związanych przede wszystkim z baskijską kultura ale także znanymi na całym świecie festiwalami organizowanymi w mieście, wypełnia co roku życie mieszkańców i turystów. Najważniejsze wydarzenia organizowane co roku w Donostii to:</p>
+          <ul class="content__list">
+            <li class="content__list-item">Tamborrada czyli dni San Sebastian, rozpoczynające się w nocy z 19 na 20 stycznia;</li>
+            <li class="content__list-item">Jazzaldia – międzynarodowy Festiwal Jazzowy przyciągający w lipcu do miasta największe gwiazdy jazzu, a przede wszystkim fanów tego rodzaju muzyki;</li>
+            <li class="content__list-item">Semana Grande czyli Wielki Tydzień, któremu począwszy od 15 sierpnia towarzyszą każdego wieczoru imponujące pokazy sztucznych ogni wystrzeliwane nad zatoką La Concha, a także liczne koncerty i występy związane z tematyką piracką;</li>
+            <li class="content__list-item">Zinemaldia – międzynarodowy Festiwal Filmowy rozpoczynający się w połowie września. Główną nagrodą przyznawaną w czasie festiwalu, na którym można było obejrzeć w 2014 roku dwa polskie filmy, jest złota muszla.</li>
+        </ul>
+        <p class="content__small-part">
+          Dla Basków kochających sport, ważnym miejscem jest również  wybudowany w dzielnicy Amara, stadion piłkarski Anoeta, liczący 32 000 miejsc, gdzie swoje mecze w ramach PrimeraDivisión rozgrywa miejscowa drużyna - Real Sociedad.
+        </p>
+      </div>
+      </div>
+    </section>
     </main>
     <footer class="footer footer--sub">
       <h2 class="footer__info">
