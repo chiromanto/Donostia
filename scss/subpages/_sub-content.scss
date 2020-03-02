@@ -1,22 +1,37 @@
 .content {
   width: 100%;
-  padding: 20vh 2rem 5vh;
+  padding: 13rem 2rem 3rem;
 
   &__section {
     padding-bottom: 4rem;
   }
 
   &__header {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-family: $font-main;
     color: $color-main-txt;
-    padding-bottom: 0.2rem;
     margin-bottom: 1.5rem;
-    border-bottom: solid 3px $color-main-txt;
+    width: 100%;
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      margin-top: 0.2rem;
+      transform: scaleX(0);
+      transform-origin: left;
+      background-color: $color-main-txt;
+      display: block;
+      transition: transform 0.8s ease-in-out;
+    }
+  }
+
+  &__header--show-line.content__header::after {
+    transform: scaleX(1);
   }
 
   &__info {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: $font-main;
     text-indent: 4rem;
     text-align: justify;
@@ -31,12 +46,16 @@
   &__list-item {
     padding-bottom: 0.5rem;
     list-style-position: outside;
-    list-style-type: circle;
+    list-style-type: square;
   }
 
   &__figure {
     width: 100%;
     padding-top: 2rem;
+  }
+
+  &__table {
+    margin-top: 2rem;
   }
 
   &__figure-info {
@@ -47,8 +66,8 @@
     padding-top: 0.6rem;
   }
 
-  &__char {
-    object-fit: contain;
+  &__picture {
+    object-fit: fill;
     width: 100%;
   }
 }

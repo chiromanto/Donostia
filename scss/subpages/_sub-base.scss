@@ -4,21 +4,25 @@
 }
 
 .header__info--sub {
-  clip-path: polygon(0 0, 100% 0, 100% 12%, 0 18%);
+  clip-path: polygon(0 0, 100% 0, 100% 10%, 0 16%);
   height: 600px;
+  background-color: darken($color-link-subpage, 20%);
 }
 
 .header__info-group--sub {
-  height: 95px;
-  padding: 0 0 0 1rem;
+  height: 80px;
+  padding: 1.5rem 0 0 2rem;
   bottom: auto;
   top: 0;
-  width: 70%;
+  width: 80%;
   text-align: left;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
-.footer--sub {
-  background-color: rgba($color-main-txt, 0.8);
+.header__info-main--sub {
+  font-weight: normal;
+  color: $color-second-txt;
+  font-size: 2.2rem;
 }
