@@ -12,6 +12,7 @@ const navItems = document.querySelectorAll('.nav__item');
 const navLinks = document.querySelectorAll('.nav__link');
 
 document.addEventListener('DOMContentLoaded', () => {
+  nav.classList.add('nav--show-nav');
   headerInfoMain.classList.add('header__info-main--show');
   if (headerInfoSecond) {
     headerInfoSecond.classList.add('header__info-second--show');
@@ -39,7 +40,17 @@ window.addEventListener('scroll', () => {
   }
 });
 
+//Hiding menu when resizing the page to prevent problems during changing view from mobile do desktop
+window.addEventListener('resize', checkWindowWidth);
+
+function checkWindowWidth() {
+  if (window.innerWidth > 1 && navSpace.classList.contains('nav__space--show')) {
+    showMenu();
+  }
+}
+
 //Show navMenu
+
 nav.addEventListener('click', showMenu);
 
 function showMenu() {

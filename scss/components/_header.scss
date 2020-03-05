@@ -1,17 +1,18 @@
 .header {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
 
   @include media(desktop) {
-    width: calc(100% - 8rem);
+    width: calc(100% - 8rem - 10vw);
+    left: 5vw;
   }
 
   &__info {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
@@ -20,7 +21,8 @@
     clip-path: polygon(0 78%, 50% 76%, 100% 60%, 100% 20%, 50% 0, 100% 0, 100% 100%, 0 100%);
 
     @include media(desktop) {
-      width: calc(100% - 8rem);
+      left: -2px;
+      width: calc(100% + 4px);
       clip-path: polygon(0 0, 25% 0, 10% 100%, 55% 100%, 70% 0, 100% 0, 100% 100%, 0 100%);
     }
 
@@ -40,7 +42,10 @@
       line-height: 1.4;
 
       @include media(desktop) {
-        padding: 1rem 1rem 25rem 62%;
+        width: 30vw;
+        left: auto;
+        right: 0;
+        padding: 1rem 2rem 25rem;
       }
     }
 
@@ -97,29 +102,22 @@
 
   &__cross {
     position: absolute;
-    width: 15rem;
-    height: 15rem;
-    top: 3vw;
-    left: 3vw;
+    width: 12rem;
+    height: 12rem;
+    top: 5rem;
+    left: 4%;
     background-image: url('../images/lauburu.svg');
     filter: invert(95%);
+    transform: rotate(0);
     display: none;
-    animation: turnCross 10s infinite linear;
+    transition: 3s linear;
+
+    &:hover {
+      transform: rotate(1turn);
+    }
 
     @include media(desktop) {
       display: block;
-    }
-  }
-
-  &__nav {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    font-size: $text-size;
-
-    @include media(desktop) {
-      top: 0;
-      right: 0;
     }
   }
 }

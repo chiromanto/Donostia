@@ -1,26 +1,38 @@
 .nav {
-  width: 3rem;
-  height: 2rem;
+  position: fixed;
+  top: 0;
+  right: -8rem;
+  font-size: $text-size;
+  height: 100%;
+  width: 8rem;
   cursor: pointer;
 
-  &:focus {
-    outline: none;
+  @include media(desktop) {
+    transform: translateX(0);
+    transition: 0.8s 0.4s ease;
+
+    &--show-nav {
+      transform: translateX(calc(-8rem - 5vw));
+    }
   }
 
-  @include media(desktop) {
-    width: 8rem;
-    height: 100%;
+  &__mobile {
+    top: 2rem;
+    right: 2rem;
+    position: fixed;
+    width: 3rem;
+    height: 2rem;
+    z-index: 3;
+
+    @include media(desktop) {
+      display: none;
+    }
   }
 
   &__menu {
     position: absolute;
     background-color: $color-second-txt;
     height: 0.4rem;
-    z-index: 3;
-
-    @include media(desktop) {
-      display: none;
-    }
 
     &--first {
       top: 0;
@@ -70,12 +82,12 @@
   }
 
   &__space {
-    position: fixed;
-    width: 75%;
+    position: absolute;
+    width: 75vw;
     height: 450px;
     top: 0;
-    right: 0;
-    transform: translateX(100%);
+    right: calc(-75vw + 8rem);
+    transform: translateX(0);
     /* Background pattern from Toptal Subtle Patterns */
     background-image: url('../images/brickwall.png');
     transition: 0.4s 0.1s;
@@ -85,14 +97,14 @@
     padding: 6rem 0 5rem;
     box-shadow: inset 0 -2rem 0 $color-main-txt;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
-    // z-index: 3;
 
     &--show {
-      transform: translateX(0);
+      transform: translateX(-100%);
     }
 
     @include media(desktop) {
-      position: relative;
+      position: absolute;
+      right: 0rem;
       width: 100%;
       height: 100%;
       transform: none;
@@ -101,6 +113,19 @@
       clip-path: none;
       box-shadow: none;
       border-left: 0.6rem solid $color-main-txt;
+
+      &::after {
+        display: block;
+        width: 10vw;
+        height: 100%;
+        top: 0;
+        right: -10vw;
+        content: '';
+        background-color: green;
+        z-index: 100;
+        position: absolute;
+        background-color: $color-main-txt;
+      }
     }
   }
 
@@ -110,15 +135,15 @@
     transition: 0.2s;
 
     @include media(desktop) {
-      position: fixed;
+      position: absolute;
       width: 32rem;
       height: 6rem;
-      right: 0;
+      margin-left: -0.6rem;
       border-left: 0.6rem solid $color-main-txt;
       /* Background pattern from Toptal Subtle Patterns */
       background-image: url('../images/brickwall.png');
-      transform: translateX(24rem);
-      transition: 0.4s;
+      transform: translateX(0);
+      transition: 0.5s;
 
       &--home {
         top: 0;
@@ -126,7 +151,7 @@
 
       &--home:hover,
       &--tab {
-        transform: translateX(0);
+        transform: translateX(-24rem);
       }
 
       &--info {
@@ -135,7 +160,7 @@
 
       &--info:hover,
       &--tab {
-        transform: translateX(0);
+        transform: translateX(-24rem);
       }
 
       &--history {
@@ -144,7 +169,7 @@
 
       &--history:hover,
       &--tab {
-        transform: translateX(0);
+        transform: translateX(-24rem);
       }
 
       &--attractions {
@@ -153,7 +178,7 @@
 
       &--attractions:hover,
       &--tab {
-        transform: translateX(0);
+        transform: translateX(-24rem);
       }
 
       &--hospitality {
@@ -162,7 +187,7 @@
 
       &--hospitality:hover,
       &--tab {
-        transform: translateX(0);
+        transform: translateX(-24rem);
       }
       &--gallery {
         top: 30rem;
@@ -170,7 +195,7 @@
 
       &--gallery:hover,
       &--tab {
-        transform: translateX(0);
+        transform: translateX(-24rem);
       }
     }
   }
@@ -184,6 +209,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    outline: none;
 
     &:hover,
     &:focus {
@@ -230,7 +256,7 @@
 
     @include media(desktop) {
       transform: scale(1);
-      flex: 0 0 8rem;
+      flex: 0 0 7.4rem;
     }
   }
 
@@ -243,7 +269,7 @@
     line-height: 1.4;
 
     @include media(desktop) {
-      flex: 0 1 24rem;
+      flex: 0 1 24.6rem;
     }
   }
 }

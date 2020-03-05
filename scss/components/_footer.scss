@@ -9,7 +9,8 @@
   z-index: 2;
 
   @include media(desktop) {
-    width: calc(100% - 8rem);
+    width: calc(100% - 8rem - 10vw);
+    left: 5vw;
   }
 
   &__info {

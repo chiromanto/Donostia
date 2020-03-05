@@ -1,30 +1,9 @@
-* {
+*,
+*::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-@-webkit-keyframes turnCross {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
-}
-
-@keyframes turnCross {
-  0% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(1turn);
-            transform: rotate(1turn);
-  }
 }
 
 :root {
@@ -33,15 +12,14 @@
 }
 
 .page {
-  max-width: 1920px;
   height: 100%;
-  background-color: black;
+  background-color: #292526;
 }
 
 .header {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 2;
@@ -49,12 +27,13 @@
 
 @media screen and (min-width: 1024px) {
   .header {
-    width: calc(100% - 8rem);
+    width: calc(100% - 8rem - 10vw);
+    left: 5vw;
   }
 }
 
 .header__info {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -66,7 +45,8 @@
 
 @media screen and (min-width: 1024px) {
   .header__info {
-    width: calc(100% - 8rem);
+    left: -2px;
+    width: calc(100% + 4px);
     -webkit-clip-path: polygon(0 0, 25% 0, 10% 100%, 55% 100%, 70% 0, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 25% 0, 10% 100%, 55% 100%, 70% 0, 100% 0, 100% 100%, 0 100%);
   }
@@ -97,7 +77,10 @@
 
 @media screen and (min-width: 1024px) {
   .header__info-group {
-    padding: 1rem 1rem 25rem 62%;
+    width: 30vw;
+    left: auto;
+    right: 0;
+    padding: 1rem 2rem 25rem;
   }
 }
 
@@ -171,16 +154,23 @@
 
 .header__cross {
   position: absolute;
-  width: 15rem;
-  height: 15rem;
-  top: 3vw;
-  left: 3vw;
+  width: 12rem;
+  height: 12rem;
+  top: 5rem;
+  left: 4%;
   background-image: url("../images/lauburu.svg");
   -webkit-filter: invert(95%);
           filter: invert(95%);
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
   display: none;
-  -webkit-animation: turnCross 10s infinite linear;
-          animation: turnCross 10s infinite linear;
+  -webkit-transition: 3s linear;
+  transition: 3s linear;
+}
+
+.header__cross:hover {
+  -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
 }
 
 @media screen and (min-width: 1024px) {
@@ -189,34 +179,41 @@
   }
 }
 
-.header__nav {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  font-size: 1rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .header__nav {
-    top: 0;
-    right: 0;
-  }
-}
-
 .nav {
-  width: 3rem;
-  height: 2rem;
+  position: fixed;
+  top: 0;
+  right: -8rem;
+  font-size: 1rem;
+  height: 100%;
+  width: 8rem;
   cursor: pointer;
-}
-
-.nav:focus {
-  outline: none;
 }
 
 @media screen and (min-width: 1024px) {
   .nav {
-    width: 8rem;
-    height: 100%;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: 0.8s 0.4s ease;
+    transition: 0.8s 0.4s ease;
+  }
+  .nav--show-nav {
+    -webkit-transform: translateX(calc(-8rem - 5vw));
+            transform: translateX(calc(-8rem - 5vw));
+  }
+}
+
+.nav__mobile {
+  top: 2rem;
+  right: 2rem;
+  position: fixed;
+  width: 3rem;
+  height: 2rem;
+  z-index: 3;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav__mobile {
+    display: none;
   }
 }
 
@@ -224,13 +221,6 @@
   position: absolute;
   background-color: #fff;
   height: 0.4rem;
-  z-index: 3;
-}
-
-@media screen and (min-width: 1024px) {
-  .nav__menu {
-    display: none;
-  }
 }
 
 .nav__menu--first {
@@ -294,13 +284,13 @@
 }
 
 .nav__space {
-  position: fixed;
-  width: 75%;
+  position: absolute;
+  width: 75vw;
   height: 450px;
   top: 0;
-  right: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  right: calc(-75vw + 8rem);
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
   /* Background pattern from Toptal Subtle Patterns */
   background-image: url("../images/brickwall.png");
   -webkit-transition: 0.4s 0.1s;
@@ -323,13 +313,14 @@
 }
 
 .nav__space--show {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 
 @media screen and (min-width: 1024px) {
   .nav__space {
-    position: relative;
+    position: absolute;
+    right: 0rem;
     width: 100%;
     height: 100%;
     -webkit-transform: none;
@@ -341,6 +332,18 @@
     -webkit-box-shadow: none;
             box-shadow: none;
     border-left: 0.6rem solid #292526;
+  }
+  .nav__space::after {
+    display: block;
+    width: 10vw;
+    height: 100%;
+    top: 0;
+    right: -10vw;
+    content: '';
+    background-color: green;
+    z-index: 100;
+    position: absolute;
+    background-color: #292526;
   }
 }
 
@@ -355,59 +358,59 @@
 
 @media screen and (min-width: 1024px) {
   .nav__item {
-    position: fixed;
+    position: absolute;
     width: 32rem;
     height: 6rem;
-    right: 0;
+    margin-left: -0.6rem;
     border-left: 0.6rem solid #292526;
     /* Background pattern from Toptal Subtle Patterns */
     background-image: url("../images/brickwall.png");
-    -webkit-transform: translateX(24rem);
-            transform: translateX(24rem);
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
   .nav__item--home {
     top: 0;
   }
   .nav__item--home:hover, .nav__item--tab {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-24rem);
+            transform: translateX(-24rem);
   }
   .nav__item--info {
     top: 6rem;
   }
   .nav__item--info:hover, .nav__item--tab {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-24rem);
+            transform: translateX(-24rem);
   }
   .nav__item--history {
     top: 12rem;
   }
   .nav__item--history:hover, .nav__item--tab {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-24rem);
+            transform: translateX(-24rem);
   }
   .nav__item--attractions {
     top: 18rem;
   }
   .nav__item--attractions:hover, .nav__item--tab {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-24rem);
+            transform: translateX(-24rem);
   }
   .nav__item--hospitality {
     top: 24rem;
   }
   .nav__item--hospitality:hover, .nav__item--tab {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-24rem);
+            transform: translateX(-24rem);
   }
   .nav__item--gallery {
     top: 30rem;
   }
   .nav__item--gallery:hover, .nav__item--tab {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: translateX(-24rem);
+            transform: translateX(-24rem);
   }
 }
 
@@ -428,6 +431,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  outline: none;
 }
 
 .nav__link:hover, .nav__link:focus {
@@ -485,8 +489,8 @@
     -webkit-transform: scale(1);
             transform: scale(1);
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 8rem;
-            flex: 0 0 8rem;
+        -ms-flex: 0 0 7.4rem;
+            flex: 0 0 7.4rem;
   }
 }
 
@@ -504,8 +508,8 @@
 @media screen and (min-width: 1024px) {
   .nav__item-text {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 24rem;
-            flex: 0 1 24rem;
+        -ms-flex: 0 1 24.6rem;
+            flex: 0 1 24.6rem;
   }
 }
 
@@ -522,7 +526,8 @@
 
 @media screen and (min-width: 1024px) {
   .footer {
-    width: calc(100% - 8rem);
+    width: calc(100% - 8rem - 10vw);
+    left: 5vw;
   }
 }
 
@@ -532,11 +537,6 @@
   font-size: 1rem;
   line-height: 3rem;
   font-family: "Poppins", "sans-serif";
-}
-
-.page--sub {
-  /* Background pattern from Toptal Subtle Patterns */
-  background-image: url("../images/brickwall.png");
 }
 
 .header--sub {
@@ -555,7 +555,7 @@
   padding: 1.5rem 0 0 2rem;
   bottom: auto;
   top: 0;
-  width: 80%;
+  width: 100%;
   text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -570,19 +570,18 @@
 
 @media screen and (min-width: 1024px) {
   .header__info-group--sub {
-    height: 90px;
     padding: 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 0 0 0 15rem;
+    padding: 0 0 0 12rem;
   }
 }
 
 .header__info-main--sub {
   font-weight: normal;
   color: #fff;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 1024px) {
@@ -593,7 +592,7 @@
 
 .arrow__nav {
   position: fixed;
-  bottom: 5rem;
+  bottom: 4rem;
   right: 2rem;
   width: 4rem;
   height: 4rem;
@@ -603,6 +602,12 @@
 
 .arrow__nav--show {
   display: block;
+}
+
+@media screen and (min-width: 1024px) {
+  .arrow__nav {
+    right: calc(5vw + 1.7rem);
+  }
 }
 
 .arrow__nav-icon {
@@ -615,12 +620,15 @@
 
 .content {
   padding: 13rem 2rem 3rem;
+  /* Background pattern from Toptal Subtle Patterns */
+  background-image: url("../images/brickwall.png");
 }
 
 @media screen and (min-width: 1024px) {
   .content {
-    width: calc(100% - 8rem);
-    padding: 16rem 15em 10rem;
+    width: calc(100% - 8rem - 10vw);
+    padding: 16rem 12rem 10rem;
+    margin-left: 5vw;
   }
 }
 
@@ -654,12 +662,6 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .content__header::after {
-    height: 3px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
   .content__header {
     font-size: 1.8rem;
   }
@@ -682,6 +684,7 @@
 @media screen and (min-width: 1024px) {
   .content__info {
     font-size: 1.5rem;
+    text-indent: 6rem;
   }
 }
 
@@ -691,8 +694,9 @@
 
 .content__list-item {
   padding-bottom: 0.5rem;
-  list-style-position: outside;
-  list-style-type: square;
+  list-style-position: inside;
+  list-style-type: disc;
+  text-indent: 0;
 }
 
 .content__figure {
@@ -740,6 +744,7 @@
   .table {
     width: 50%;
     margin: 4rem auto;
+    font-size: 1.4rem;
   }
 }
 
@@ -748,6 +753,12 @@
   font-weight: bold;
   font-size: 1.2rem;
   font-style: italic;
+}
+
+@media screen and (min-width: 1024px) {
+  .table__caption {
+    font-size: 1.4rem;
+  }
 }
 
 .table__header {
@@ -784,6 +795,14 @@
   background-color: #292526;
 }
 
+@media screen and (min-width: 1024px) {
+  .gallery {
+    padding-left: 5vw;
+    padding-top: 5rem;
+    padding-right: calc(5vw + 8rem);
+  }
+}
+
 .gallery__item {
   display: block;
   font-size: 0;
@@ -793,21 +812,15 @@
 
 .gallery__img {
   max-width: 100%;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .gallery__img:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
-@media screen and (min-width: 1024px) {
-  .gallery__img {
-    min-width: 100%;
-  }
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .header__info--gallery {
