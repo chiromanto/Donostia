@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body class="page page--sub">
-    <header class="header">
-      <div class="header__info header__info--sub">
+    <header class="header header--sub">
+      <div class="header__info header__info--sub header__info--gallery">
         <div class="header__info-group header__info-group--sub">
           <h1 class="header__info-main header__info-main--sub">Galeria</h1>
         </div>
       </div>
-      <nav class="nav header__nav" id="nav">
+      <nav class="nav header__nav">
         <span class="nav__menu nav__menu--first nav__menu--click-first"></span>
         <span class="nav__menu nav__menu--second nav__menu--click-second"></span>
         <span class="nav__menu nav__menu--third nav__menu--click-third"></span>
         <div class="nav__space">
-          <div class="nav__item" id="#nav__home">
+          <div class="nav__item nav__item--home">
             <a href="../index.html" class="nav__link">
               <svg xmlns="http://www.w3.org/2000/svg" class="nav__icon" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M12 6.453l9 8.375v9.172h-6v-6h-6v6h-6v-9.172l9-8.375zm12 5.695l-12-11.148-12 11.133 1.361 1.465 10.639-9.868 10.639 9.883 1.361-1.465z" />
@@ -27,7 +27,7 @@
               <span class="nav__item-text">Strona startowa</span>
             </a>
           </div>
-          <div class="nav__item" id="#nav__info">
+          <div class="nav__item nav__item--info">
             <a href="info.html" class="nav__link">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="nav__icon">
                 <path
@@ -37,7 +37,7 @@
               <span class="nav__item-text">Podstawowe informacje</span>
             </a>
           </div>
-          <div class="nav__item" id="#nav__history">
+          <div class="nav__item nav__item--history">
             <a href="history.html" class="nav__link">
               <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="nav__icon" viewBox="0 0 24 24">
                 <path
@@ -47,7 +47,7 @@
               <span class="nav__item-text">Historia miasta</span>
             </a>
           </div>
-          <div class="nav__item" id="#nav__atractions">
+          <div class="nav__item nav__item--attractions">
             <a href="attractions.html" class="nav__link">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="nav__icon">
                 <path
@@ -57,7 +57,7 @@
               <span class="nav__item-text">Atrakcje turystyczne</span>
             </a>
           </div>
-          <div class="nav__item" id="#nav__hospitality">
+          <div class="nav__item nav__item--hospitality">
             <a href="hospitality.html" class="nav__link">
               <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" width="24" height="24" clip-rule="evenodd" class="nav__icon" viewBox="0 0 24 24">
                 <path
@@ -67,8 +67,8 @@
               <span class="nav__item-text">Baza turystyczna</span>
             </a>
           </div>
-          <div class="nav__item nav__item--current" id="#nav__gallery">
-            <a href="gallery.html" class="nav__link">
+          <div class="nav__item nav__item--gallery">
+            <a href="gallery.html" class="nav__link nav__link--current">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="nav__icon">
                 <path d="M5 8.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5zm9 .5l-2.519 4-2.481-1.96-4 5.96h14l-5-8zm8-4v14h-20v-14h20zm2-2h-24v18h24v-18z" />
               </svg>
@@ -77,8 +77,36 @@
           </div>
         </div>
       </nav>
+      <div class="arrow__nav">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="arrow__nav-icon"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.218 19l-1.782-1.75 5.25-5.25-5.25-5.25 1.782-1.75 6.968 7-6.968 7z" /></svg>
+      </div>
     </header>
-    <main class="content"></main>
+    <main class="gallery">
+      <picture class="gallery__item">
+        <source srcset="../images/clara_mobile.jpg" type="image/jpg" media="all and (max-width:600px)" />
+        <img src="../images/clara_desktop.jpg" alt="Wyspa Santa Clara" class="gallery__img" />
+      </picture>
+      <picture class="gallery__item">
+        <source srcset="../images/ayutamiento_mobile.jpg" type="image/jpg" media="all and (max-width:600px)" />
+        <img src="../images/ayutamiento_desktop.jpg" alt="Ratusz w San Sebastian" class="gallery__img" />
+      </picture>
+      <picture class="gallery__item">
+        <source srcset="../images/basilica_mobile.jpg" type="image/jpg" media="all and (max-width:600px)" />
+        <img src="../images/basilica_desktop.jpg" alt="Bazylika Santa Maria del Coro" class="gallery__img" />
+      </picture>
+      <picture class="gallery__item">
+        <source srcset="../images/esqueleto_mobile.jpg" type="image/jpg" media="all and (max-width:600px)" />
+        <img src="../images/esqueleto_desktop.jpg" alt="Szkielet wieloryba w Aquarium" class="gallery__img" />
+      </picture>
+      <picture class="gallery__item">
+        <source srcset="../images/telmo_mobile.jpg" type="image/jpg" media="all and (max-width:600px)" />
+        <img src="../images/telmo_desktop.jpg" alt="Muzeum Świętego Telma" class="gallery__img" />
+      </picture>
+      <picture class="gallery__item">
+        <source srcset="../images/vincente_mobile.jpg" type="image/jpg" media="all and (max-width:600px)" />
+        <img src="../images/vincente_desktop.jpg" alt="Kościół San Vincente" class="gallery__img" />
+      </picture>
+    </main>
     <footer class="footer">
       <h2 class="footer__info">
         All rights reserved &copy <strong>Created by <span class="footer__info-karset">Karset</span></strong>

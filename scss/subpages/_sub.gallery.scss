@@ -1,1 +1,32 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  padding-top: 9rem;
+  width: 100%;
+  background-color: $color-main-txt;
 
+  &__item {
+    display: block;
+    font-size: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__img {
+    max-width: 100%;
+    transform: scale(1);
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include media(desktop) {
+      min-width: 100%;
+    }
+  }
+}
+
+.header__info--gallery {
+  background-color: rgba($color-main-txt, 0.8);
+}

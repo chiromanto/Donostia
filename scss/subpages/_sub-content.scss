@@ -1,6 +1,10 @@
 .content {
-  width: 100%;
   padding: 13rem 2rem 3rem;
+
+  @include media(desktop) {
+    width: calc(100% - 8rem);
+    padding: 16rem 15em 10rem;
+  }
 
   &__section {
     padding-bottom: 4rem;
@@ -23,6 +27,14 @@
       background-color: $color-main-txt;
       display: block;
       transition: transform 0.8s ease-in-out;
+
+      @include media(desktop) {
+        height: 3px;
+      }
+    }
+
+    @include media(desktop) {
+      font-size: 1.8rem;
     }
   }
 
@@ -37,6 +49,9 @@
     text-align: justify;
     color: $color-main-txt;
     overflow: hidden;
+    @include media(desktop) {
+      font-size: 1.5rem;
+    }
   }
 
   &__small-part {
@@ -52,6 +67,12 @@
   &__figure {
     width: 100%;
     padding-top: 2rem;
+
+    @include media(desktop) {
+      width: 60%;
+      margin: 0 auto;
+      padding-top: 4rem;
+    }
   }
 
   &__table {

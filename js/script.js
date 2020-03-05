@@ -1,4 +1,4 @@
-const nav = document.getElementById('nav');
+const nav = document.querySelector('.nav');
 const navSpace = document.querySelector('.nav__space');
 const menuSpans = document.querySelectorAll('.nav__menu');
 const navIcons = document.querySelectorAll('.nav__icon');
@@ -7,6 +7,9 @@ const headerInfoSecond = document.querySelector('.header__info-second');
 const closingClasses = ['nav__menu--close-first', 'nav__menu--close-second', 'nav__menu--close-third'];
 const headerUnderLines = document.querySelectorAll('.content__header');
 const currentScroll = window.pageYOffset;
+const arrow = document.querySelector('.arrow__nav');
+const navItems = document.querySelectorAll('.nav__item');
+const navLinks = document.querySelectorAll('.nav__link');
 
 document.addEventListener('DOMContentLoaded', () => {
   headerInfoMain.classList.add('header__info-main--show');
@@ -14,13 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
     headerInfoSecond.classList.add('header__info-second--show');
   }
 
-  //Drawing line under first header
+  //Draw line under first header
   if (headerUnderLines[0]) {
     headerUnderLines[0].classList.add('content__header--show-line');
   }
 });
 
-nav.addEventListener('click', () => {
+//Draw lines under other headers
+window.addEventListener('scroll', () => {
+  headerUnderLines.forEach(header => {
+    if (header.offsetTop - window.pageYOffset < 400) {
+      header.classList.add('content__header--show-line');
+    }
+  });
+
+  //Show arrow in bottom-right corner
+  if (window.pageYOffset >= 200) {
+    arrow.classList.add('arrow__nav--show');
+  } else {
+    arrow.classList.remove('arrow__nav--show');
+  }
+});
+
+//Show navMenu
+nav.addEventListener('click', showMenu);
+
+function showMenu() {
   menuSpans.forEach((span, i) => {
     span.classList.toggle(`${closingClasses[i]}`);
   });
@@ -28,14 +50,33 @@ nav.addEventListener('click', () => {
     icon.classList.toggle('nav__icon--show');
   });
   navSpace.classList.toggle('nav__space--show');
-});
+}
 
-//Drawing lines under other headers
-window.addEventListener('scroll', () => {
-  headerUnderLines.forEach(header => {
-    if (header.offsetTop - window.pageYOffset < 400) {
-      header.classList.add('content__header--show-line');
-      console.log('działa');
-    }
+//Show ItemMenu (Desktop)
+navLinks.forEach(showItemMenu);
+
+function showItemMenu(link, i) {
+  let counter = i;
+
+  link.addEventListener('blur', () => {
+    navItems[counter].classList.remove('nav__item--tab');
   });
-});
+
+  link.addEventListener('focus', () => {
+    navItems[counter].classList.add('nav__item--tab');
+  });
+}
+
+//Go back to top of the page
+function animateScroll() {
+  if (window.pageYOffset > 0) {
+    window.scrollBy(0, -20);
+    setTimeout(animateScroll, 10);
+  }
+}
+
+if (arrow) {
+  arrow.addEventListener('click', function() {
+    animateScroll();
+  });
+}

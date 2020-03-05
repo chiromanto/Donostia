@@ -2,13 +2,25 @@
   width: 3rem;
   height: 2rem;
   cursor: pointer;
-  // background: green;
+
+  &:focus {
+    outline: none;
+  }
+
+  @include media(desktop) {
+    width: 8rem;
+    height: 100%;
+  }
 
   &__menu {
     position: absolute;
     background-color: $color-second-txt;
     height: 0.4rem;
     z-index: 3;
+
+    @include media(desktop) {
+      display: none;
+    }
 
     &--first {
       top: 0;
@@ -64,7 +76,8 @@
     top: 0;
     right: 0;
     transform: translateX(100%);
-    background-image: url('../images/ravenna.png');
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url('../images/brickwall.png');
     transition: 0.4s 0.1s;
     display: flex;
     flex-direction: column;
@@ -72,10 +85,22 @@
     padding: 6rem 0 5rem;
     box-shadow: inset 0 -2rem 0 $color-main-txt;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
-    z-index: 2;
+    // z-index: 3;
 
     &--show {
       transform: translateX(0);
+    }
+
+    @include media(desktop) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: none;
+      padding: 0;
+      display: block;
+      clip-path: none;
+      box-shadow: none;
+      border-left: 0.6rem solid $color-main-txt;
     }
   }
 
@@ -84,15 +109,94 @@
     flex: 1 1 0;
     transition: 0.2s;
 
-    &:hover {
+    @include media(desktop) {
+      position: fixed;
+      width: 32rem;
+      height: 6rem;
+      right: 0;
+      border-left: 0.6rem solid $color-main-txt;
+      /* Background pattern from Toptal Subtle Patterns */
+      background-image: url('../images/brickwall.png');
+      transform: translateX(24rem);
+      transition: 0.4s;
+
+      &--home {
+        top: 0;
+      }
+
+      &--home:hover,
+      &--tab {
+        transform: translateX(0);
+      }
+
+      &--info {
+        top: 6rem;
+      }
+
+      &--info:hover,
+      &--tab {
+        transform: translateX(0);
+      }
+
+      &--history {
+        top: 12rem;
+      }
+
+      &--history:hover,
+      &--tab {
+        transform: translateX(0);
+      }
+
+      &--attractions {
+        top: 18rem;
+      }
+
+      &--attractions:hover,
+      &--tab {
+        transform: translateX(0);
+      }
+
+      &--hospitality {
+        top: 24rem;
+      }
+
+      &--hospitality:hover,
+      &--tab {
+        transform: translateX(0);
+      }
+      &--gallery {
+        top: 30rem;
+      }
+
+      &--gallery:hover,
+      &--tab {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 0 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    &:hover,
+    &:focus {
       background-color: rgba($color-main-txt, 0.4);
     }
 
-    &:hover .nav__icon {
+    &:hover .nav__icon,
+    &:focus .nav__icon {
       fill: $color-second-txt;
     }
 
-    &:hover .nav__item-text {
+    &:hover .nav__item-text,
+    &:focus .nav__item-text {
       color: $color-second-txt;
     }
 
@@ -107,17 +211,10 @@
     &--current .nav__item-text {
       color: $color-second-txt;
     }
-  }
 
-  &__link {
-    text-decoration: none;
-    padding: 0 5%;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    @include media(desktop) {
+      padding: 0;
+    }
   }
 
   &__icon {
@@ -130,6 +227,11 @@
     &--show {
       transform: scale(1);
     }
+
+    @include media(desktop) {
+      transform: scale(1);
+      flex: 0 0 8rem;
+    }
   }
 
   &__item-text {
@@ -139,5 +241,9 @@
     color: $color-main-txt;
     transition: 0.2s;
     line-height: 1.4;
+
+    @include media(desktop) {
+      flex: 0 1 24rem;
+    }
   }
 }
