@@ -3,26 +3,46 @@
   top: 0;
   right: -8rem;
   font-size: $text-size;
-  height: 100%;
+  height: calc(100% - 3rem);
   width: 8rem;
   cursor: pointer;
+
+  @include media(mobile, land) {
+    z-index: 2;
+  }
 
   @include media(desktop) {
     transform: translateX(0);
     transition: 0.8s 0.4s ease;
 
     &--show-nav {
-      transform: translateX(calc(-8rem - 5vw));
+      transform: translateX(calc(((100vw - 112rem + 8rem) / 2) * (-1)));
+    }
+  }
+
+  @include media(desktop-bg) {
+    &--show-nav {
+      transform: translateX(calc(((100vw - 142rem + 8rem) / 2) * (-1)));
     }
   }
 
   &__mobile {
-    top: 2rem;
+    top: 1rem;
     right: 2rem;
     position: fixed;
     width: 3rem;
     height: 2rem;
     z-index: 3;
+
+    @include media(tablet, port) {
+      top: 2rem;
+      right: 3rem;
+    }
+
+    @include media(tablet-bg, land) {
+      top: 2rem;
+      right: 3rem;
+    }
 
     @include media(desktop) {
       display: none;
@@ -83,10 +103,10 @@
 
   &__space {
     position: absolute;
-    width: 75vw;
-    height: 450px;
+    width: 70vw;
+    height: 35rem;
     top: 0;
-    right: calc(-75vw + 8rem);
+    right: calc(-70vw + 8rem);
     transform: translateX(0);
     /* Background pattern from Toptal Subtle Patterns */
     background-image: url('../images/brickwall.png');
@@ -94,12 +114,36 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 6rem 0 5rem;
-    box-shadow: inset 0 -2rem 0 $color-main-txt;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 96%);
+    padding: 5rem 0 0;
+    border-bottom: 1rem solid $color-main-txt;
 
     &--show {
       transform: translateX(-100%);
+    }
+
+    @include media(mobile, land) {
+      justify-content: flex-start;
+      height: 100%;
+      overflow: auto;
+      width: 60vw;
+      right: calc(-60vw + 8rem);
+      padding: 0 6rem 0 0;
+      box-shadow: inset 0 -0.5px 0 $color-main-txt;
+      border-bottom: 1rem solid $color-main-txt;
+    }
+
+    @include media(tablet, port) {
+      padding: 6rem 0 0;
+      height: 35rem;
+      width: 50vw;
+      right: calc(-50vw + 8rem);
+    }
+
+    @include media(tablet-bg, land) {
+      padding: 6rem 0 0;
+      height: 35rem;
+      width: 40vw;
+      right: calc(-40vw + 8rem);
     }
 
     @include media(desktop) {
@@ -113,15 +157,16 @@
       clip-path: none;
       box-shadow: none;
       border-left: 0.6rem solid $color-main-txt;
+      overflow: initial;
+      border-bottom: none;
 
       &::after {
         display: block;
-        width: 10vw;
+        width: 30vw;
         height: 100%;
         top: 0;
-        right: -10vw;
+        right: -30vw;
         content: '';
-        background-color: green;
         z-index: 100;
         position: absolute;
         background-color: $color-main-txt;
@@ -132,7 +177,20 @@
   &__item {
     width: 100%;
     flex: 1 1 0;
-    transition: 0.2s;
+    // transition: 0.2s;
+    border-top: 0.5px solid $color-main-txt;
+
+    @include media(mobile, land) {
+      flex: 0 0 4.9rem;
+      border-top: none;
+      border-bottom: 0.5px solid $color-main-txt;
+    }
+
+    @include media(tablet-bg, land) {
+      flex: 1 1 0;
+      border-top: 0.5px solid $color-main-txt;
+      border-bottom: none;
+    }
 
     @include media(desktop) {
       position: absolute;
@@ -140,6 +198,8 @@
       height: 6rem;
       margin-left: -0.6rem;
       border-left: 0.6rem solid $color-main-txt;
+      border-bottom: 0.5px solid $color-main-txt;
+      border-top: none;
       /* Background pattern from Toptal Subtle Patterns */
       background-image: url('../images/brickwall.png');
       transform: translateX(0);
@@ -152,6 +212,7 @@
       &--home:hover,
       &--tab {
         transform: translateX(-24rem);
+        background-color: darken($color-main-bg, 20%);
       }
 
       &--info {
@@ -202,18 +263,18 @@
 
   &__link {
     text-decoration: none;
-    padding: 0 5%;
+    padding: 0;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: center;
     outline: none;
 
     &:hover,
     &:focus {
-      background-color: rgba($color-main-txt, 0.4);
+      background-color: darken($color-main-bg, 20%);
+      border-bottom: 0.5px solid $color-main-txt;
     }
 
     &:hover .nav__icon,
@@ -227,7 +288,7 @@
     }
 
     &--current {
-      background-color: darken($color-link-subpage, 20%);
+      background-color: darken($color-main-bg, 50%);
     }
 
     &--current .nav__icon {
@@ -237,38 +298,44 @@
     &--current .nav__item-text {
       color: $color-second-txt;
     }
-
-    @include media(desktop) {
-      padding: 0;
-    }
   }
 
   &__icon {
     fill: lighten($color-main-txt, 10%);
-    height: 3rem;
+    height: 2.5rem;
     transform: scale(0);
-    flex-basis: 3rem;
-    transition: transform 0.4s 0.3s, fill 0.2s;
+    flex: 0 0 25%;
+    transition: transform 0.4s 0.3s;
 
     &--show {
       transform: scale(1);
     }
 
     @include media(desktop) {
+      height: 3rem;
       transform: scale(1);
       flex: 0 0 7.4rem;
     }
   }
 
   &__item-text {
-    flex-basis: 60%;
-    font-size: 1.6rem;
+    flex: 0 0 75%;
+    font-size: 1.1rem;
     font-family: $font-main;
     color: $color-main-txt;
-    transition: 0.2s;
     line-height: 1.4;
+    text-transform: uppercase;
+
+    @include media(tablet, port) {
+      font-size: 1.3rem;
+    }
+
+    @include media(tablet-bg, land) {
+      font-size: 1.3rem;
+    }
 
     @include media(desktop) {
+      font-size: 1.5rem;
       flex: 0 1 24.6rem;
     }
   }

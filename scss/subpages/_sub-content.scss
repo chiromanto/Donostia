@@ -2,11 +2,30 @@
   padding: 13rem 2rem 3rem;
   /* Background pattern from Toptal Subtle Patterns */
   background-image: url('../images/brickwall.png');
+  line-height: 1.8;
+
+  @include media(mobile, land) {
+    padding: 10rem 6rem 3rem;
+  }
+
+  @include media(tablet, port) {
+    padding: 16rem 6rem 12rem;
+  }
+
+  @include media(tablet-bg, land) {
+    padding: 13rem 10rem 10rem;
+  }
 
   @include media(desktop) {
-    width: calc(100% - 8rem - 10vw);
-    padding: 16rem 12rem 10rem;
-    margin-left: 5vw;
+    margin-left: calc(((100vw - 112rem - 8rem) / 2) - (100vw - 100%));
+    width: 112rem;
+    padding: 15rem 12rem 10rem;
+  }
+
+  @include media(desktop-bg) {
+    margin-left: calc(((100vw - 142rem - 8rem) / 2) - (100vw - 100%));
+    width: 142rem;
+    padding: 18rem 15rem 10rem;
   }
 
   &__section {
@@ -29,7 +48,7 @@
       transform-origin: left;
       background-color: $color-main-txt;
       display: block;
-      transition: transform 0.8s ease-in-out;
+      transition: transform 1s ease-in-out;
     }
 
     @include media(desktop) {
@@ -48,6 +67,7 @@
     text-align: justify;
     color: $color-main-txt;
     overflow: hidden;
+
     @include media(desktop) {
       font-size: 1.5rem;
       text-indent: 6rem;
@@ -69,10 +89,18 @@
     width: 100%;
     padding-top: 2rem;
 
-    @include media(desktop) {
+    @include media(mobile, land) {
+      width: 80%;
+      margin: 0 auto 2rem;
+    }
+
+    @include media(tablet, port) {
+      width: 80%;
+      margin: 2rem auto 2rem;
+    }
+
+    @include media(tablet-bg, land) {
       width: 60%;
-      margin: 0 auto;
-      padding-top: 4rem;
     }
   }
 

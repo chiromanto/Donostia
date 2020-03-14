@@ -7,62 +7,90 @@
   z-index: 2;
 
   @include media(desktop) {
-    width: calc(100% - 8rem - 10vw);
-    left: 5vw;
+    position: relative;
+    width: 112rem;
+    overflow: hidden;
+    margin-left: calc((100vw - 112rem - 8rem) / 2);
+  }
+
+  @include media(desktop-bg) {
+    width: 142rem;
+    margin-left: calc((100vw - 142rem - 8rem) / 2);
   }
 
   &__info {
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
+    height: 28%;
+    bottom: 0;
     left: 0;
     background-color: rgba($color-main-txt, 0.8);
-    clip-path: polygon(0 78%, 50% 76%, 100% 60%, 100% 20%, 50% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: ellipse(100% 100% at 50% 100%);
 
-    @include media(desktop) {
-      left: -2px;
-      width: calc(100% + 4px);
-      clip-path: polygon(0 0, 25% 0, 10% 100%, 55% 100%, 70% 0, 100% 0, 100% 100%, 0 100%);
+    @include media(mobile, land) {
+      width: 45%;
+      height: 100%;
+      left: auto;
+      right: 0;
+      clip-path: ellipse(88% 100% at 95% 60%);
     }
 
     &-group {
       position: absolute;
       width: 100%;
-      height: 22%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 1rem 2rem 4rem;
+      padding: 2rem 2rem 4rem;
       bottom: 0;
       left: 0;
       text-align: center;
       font-family: $font-main;
       color: $color-second-txt;
-      line-height: 1.4;
 
-      @include media(desktop) {
-        width: 30vw;
+      @include media(mobile, land) {
         left: auto;
         right: 0;
-        padding: 1rem 2rem 25rem;
+        padding: 2rem 2rem 3rem;
+        height: 70%;
+        width: 95%;
+      }
+
+      @include media(tablet-bg, land) {
+        padding: 2rem 3rem 3rem;
+        height: 70%;
+        width: 95%;
+      }
+
+      @include media(desktop) {
+        height: 50%;
+        padding: 1rem 2rem 10rem;
       }
     }
 
     &-main {
       font-size: 2.4rem;
-      font-weight: bold;
+      font-weight: 600;
+      font-style: italic;
       padding-bottom: 0.5rem;
       transform: scale(0);
       transition: transform 0.6s;
-      font-style: italic;
 
       &--show {
         transform: scale(1);
       }
 
-      @include media(desktop) {
-        font-size: 3rem;
+      @include media(tablet, port) {
+        font-size: 3.2rem;
+      }
+
+      @include media(tablet-bg, land) {
+        font-size: 3.2rem;
+      }
+
+      @include media(desktop-bg) {
+        font-size: 3.6rem;
       }
     }
 
@@ -77,8 +105,16 @@
         transform: scale(1);
       }
 
-      @include media(desktop) {
-        font-size: 1.5rem;
+      @include media(tablet, port) {
+        font-size: 1.6rem;
+      }
+
+      @include media(tablet-bg, land) {
+        font-size: 1.6rem;
+      }
+
+      @include media(desktop-bg) {
+        font-size: 2rem;
       }
     }
   }
@@ -91,8 +127,14 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    @include media(tablet) {
+    @include media(mobile, land) {
       background-image: url('../images/peine_medium.jpg');
+      background-position: left 30% top 30%;
+    }
+
+    @include media(tablet, port) {
+      background-image: url('../images/peine_medium.jpg');
+      background-position: left 35% top 30%;
     }
 
     @include media(desktop) {
@@ -100,24 +142,58 @@
     }
   }
 
+  &__shadow {
+    position: absolute;
+    background-color: rgba($color-main-txt, 0.8);
+    width: 20rem;
+    height: 20rem;
+    top: 0;
+    right: 0;
+    transform: rotate(-45deg) translateX(70%);
+    clip-path: ellipse(100% 100% at 100% 10%);
+
+    @include media(mobile, land) {
+      transform: rotate(10deg) translateY(-10%);
+      transform-origin: left top;
+      right: auto;
+      left: 0;
+      height: 110%;
+      width: 20%;
+      clip-path: ellipse(95% 100% at 5% 30%);
+    }
+  }
+
   &__cross {
     position: absolute;
-    width: 12rem;
-    height: 12rem;
-    top: 5rem;
-    left: 4%;
     background-image: url('../images/lauburu.svg');
     filter: invert(95%);
     transform: rotate(0);
     display: none;
-    transition: 3s linear;
+    transition: 0.5s linear;
 
     &:hover {
-      transform: rotate(1turn);
+      transform: rotate(0.5turn);
+    }
+
+    @include media(mobile, land) {
+      display: block;
+      width: 6rem;
+      height: 6rem;
+      top: 3rem;
+      right: auto;
+      left: 4%;
+    }
+
+    @include media(tablet-bg, land) {
+      width: 11rem;
+      height: 11rem;
+      top: 4rem;
     }
 
     @include media(desktop) {
-      display: block;
+      width: 12rem;
+      height: 12rem;
+      top: 5rem;
     }
   }
 }

@@ -8,11 +8,6 @@
   background-color: $color-main-txt;
   z-index: 2;
 
-  @include media(desktop) {
-    width: calc(100% - 8rem - 10vw);
-    left: 5vw;
-  }
-
   &__info {
     color: $color-second-txt;
     font-weight: normal;

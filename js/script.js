@@ -1,3 +1,5 @@
+'strict mode';
+
 const nav = document.querySelector('.nav');
 const navSpace = document.querySelector('.nav__space');
 const menuSpans = document.querySelectorAll('.nav__menu');
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //Draw lines under other headers
 window.addEventListener('scroll', () => {
   headerUnderLines.forEach(header => {
-    if (header.offsetTop - window.pageYOffset < 400) {
+    if (header.offsetTop - window.pageYOffset < 500) {
       header.classList.add('content__header--show-line');
     }
   });
@@ -40,17 +42,16 @@ window.addEventListener('scroll', () => {
   }
 });
 
-//Hiding menu when resizing the page to prevent problems during changing view from mobile do desktop
+//Hiding menu when resizing the page to prevent problems during changing screen resolution
 window.addEventListener('resize', checkWindowWidth);
 
 function checkWindowWidth() {
-  if (window.innerWidth > 1 && navSpace.classList.contains('nav__space--show')) {
-    showMenu();
+  if (window.innerWidth > 800 && navSpace.classList.contains('nav__space--show')) {
+    // showMenu();
   }
 }
 
-//Show navMenu
-
+//Show nav menu
 nav.addEventListener('click', showMenu);
 
 function showMenu() {
@@ -63,19 +64,32 @@ function showMenu() {
   navSpace.classList.toggle('nav__space--show');
 }
 
-//Show ItemMenu (Desktop)
+//Show ItemMenu with tab (Desktop)
 navLinks.forEach(showItemMenu);
 
 function showItemMenu(link, i) {
-  let counter = i;
-
   link.addEventListener('blur', () => {
-    navItems[counter].classList.remove('nav__item--tab');
+    navItems[i].classList.remove('nav__item--tab');
+  });
+  link.addEventListener('focus', () => {
+    navItems[i].classList.add('nav__item--tab');
   });
 
-  link.addEventListener('focus', () => {
-    navItems[counter].classList.add('nav__item--tab');
-  });
+  //For touchable screens with resolution 1280px
+  if (window.innerWidth >= 1280) {
+    link.addEventListener('touchstart', e => {
+      navItems.forEach((item, i) => {
+        if (item.classList.contains('nav__item--tab') && e.currentTarget != navLinks[i]) {
+          item.classList.remove('nav__item--tab');
+        }
+      });
+
+      if (!navItems[i].classList.contains('nav__item--tab')) {
+        e.preventDefault();
+        navItems[i].classList.add('nav__item--tab');
+      }
+    });
+  }
 }
 
 //Go back to top of the page

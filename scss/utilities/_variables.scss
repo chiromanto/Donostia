@@ -1,10 +1,18 @@
 $text-size: 1rem;
-$font-main: 'Poppins', 'sans-serif';
+$font-main: 'Proza Libre', sans-serif;
 $color-main-bg: #d6d7dc;
 $color-main-txt: #292526;
 $color-second-txt: #fff;
-$color-link-subpage: #358a35;
+$color-table-header: #358a35;
 $breakpoints: (
-  'tablet': 500px,
-  'desktop': 1024px
+  'mobile': 500px,
+  'tablet': 600px,
+  'tablet-bg': 900px,
+  'desktop': 1280px,
+  'desktop-bg': 1600px
+);
+
+$orientations: (
+  'land': landscape,
+  'port': portrait
 );
